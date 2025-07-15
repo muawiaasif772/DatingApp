@@ -8,8 +8,15 @@ import {
   SafeAreaView,
   StatusBar,
   Keyboard,
+<<<<<<< HEAD
   ScrollView,
 } from 'react-native';
+=======
+  TouchableWithoutFeedback,
+  ScrollView,
+} from 'react-native';
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+>>>>>>> 16ff305 (fix issues)
 
 // You'll need to install: npm install react-native-country-picker-modal
 import CountryPicker, {
@@ -18,7 +25,11 @@ import CountryPicker, {
 } from 'react-native-country-picker-modal';
 import Button from '../../components/Button';
 
+<<<<<<< HEAD
 interface MobileVerificationProps {}
+=======
+interface MobileVerificationProps { }
+>>>>>>> 16ff305 (fix issues)
 
 const PhoneNumber: React.FC<MobileVerificationProps> = () => {
   const [countryCode, setCountryCode] = useState<CountryCode>('PK');
@@ -76,6 +87,7 @@ const PhoneNumber: React.FC<MobileVerificationProps> = () => {
     setShowCountryPicker(true);
   };
 
+<<<<<<< HEAD
   const handleScrollViewTouch = (event: any) => {
     // Get the touch coordinates
     const { locationX, locationY } = event.nativeEvent;
@@ -110,6 +122,21 @@ const PhoneNumber: React.FC<MobileVerificationProps> = () => {
       contentContainerStyle={styles.scrollContent}
     >
       <SafeAreaView style={styles.container}>
+=======
+
+
+
+
+  return (
+
+    <SafeAreaView style={styles.container}>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>   
+              <KeyboardAwareScrollView
+        style={{ flex: 1, flexGrow: 1 }}
+        keyboardShouldPersistTaps="handled"
+
+      >
+>>>>>>> 16ff305 (fix issues)
         <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
 
         <View style={styles.content}>
@@ -157,19 +184,35 @@ const PhoneNumber: React.FC<MobileVerificationProps> = () => {
               placeholderTextColor="#999"
               keyboardType="phone-pad"
               maxLength={12} // XXX XXX XXXX format
+<<<<<<< HEAD
               returnKeyType="done"
               blurOnSubmit={true}
+=======
+              // returnKeyType="done"
+
+>>>>>>> 16ff305 (fix issues)
             />
           </TouchableOpacity>
 
           <Button
             title="Continue"
             style={styles.continueButton}
+<<<<<<< HEAD
             onPress={handleContinue}
           />
         </View>
       </SafeAreaView>
     </ScrollView>
+=======
+            onPress={() => { console.log("pressed") }}
+          />
+        </View>
+      </KeyboardAwareScrollView>
+      </TouchableWithoutFeedback>
+
+    </SafeAreaView>
+
+>>>>>>> 16ff305 (fix issues)
   );
 };
 

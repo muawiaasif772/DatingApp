@@ -10,6 +10,10 @@
 			<key>NSPrivacyAccessedAPITypeReasons</key>
 			<array>
 				<string>C617.1</string>
+<<<<<<< HEAD
+=======
+				<string>3B52.1</string>
+>>>>>>> 16ff305 (fix issues)
 			</array>
 		</dict>
 		<dict>

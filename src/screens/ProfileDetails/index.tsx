@@ -53,7 +53,11 @@ const ProfileDetails = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.skipButton}>
+<<<<<<< HEAD
         <Text style={styles.skipText}>Skip</Text>
+=======
+        <Text style={styles.skipText}>Skip</Text> 
+>>>>>>> 16ff305 (fix issues)
       </TouchableOpacity>
 
       <Text style={styles.title}>Profile details</Text>
@@ -155,8 +159,15 @@ const styles = StyleSheet.create({
     padding: 24,
     backgroundColor: '#fff',
     paddingHorizontal: 35,
+<<<<<<< HEAD
   },
   skipButton: {
+=======
+    paddingTop: 60,
+  },
+  skipButton: {
+    // marginTop: 20,
+>>>>>>> 16ff305 (fix issues)
     alignSelf: 'flex-end',
   },
   skipText: {
@@ -206,7 +217,11 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
+<<<<<<< HEAD
     borderColor: '#eee',
+=======
+    borderColor: 'gray',
+>>>>>>> 16ff305 (fix issues)
     borderRadius: 12,
     marginBottom: 16,
     fontSize: 16,
@@ -235,7 +250,11 @@ const styles = StyleSheet.create({
     // backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   modalContent: {
+<<<<<<< HEAD
     backgroundColor: 'red',
+=======
+    // backgroundColor: 'red',
+>>>>>>> 16ff305 (fix issues)
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     paddingBottom: 20,

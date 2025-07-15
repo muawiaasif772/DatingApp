@@ -6,7 +6,6 @@ import { Images } from '../../theme/Images';
 import OnBoarding from '../../screens/OnBoarding';
 
 const { width } = Dimensions.get('window');
-
 const { SliderImg1, SliderImg2, SliderImg3 } = Images;
 type OnboardingItem = {
   image: any; // You can replace `any` with `ImageSourcePropType` for better typing
@@ -14,7 +13,6 @@ type OnboardingItem = {
   description: string;
   // buttonLabel: string;
 };
-
 const onboardingData: OnboardingItem[] = [
   {
     image: SliderImg1,
@@ -23,29 +21,23 @@ const onboardingData: OnboardingItem[] = [
       'Users going through a vetting process to ensure you never match with bots.',
     // buttonLabel: "Next",
   },
-  {
     image: SliderImg2,
     title: 'Matches ',
-    description: 'We match you with people that have a large array of similar interests.',
+    description: 'We match you with people that have a large array of similar .',
     // buttonLabel: "Continue",
-  },
-  {
     image: SliderImg3,
     title: 'Premium',
     description: 'Sign up today and enjoy the first month of premium benefits on us..',
     // buttonLabel: "Get Started",
-  },
 ];
-
 function CarouselSlider() {
   const progress = useSharedValue<number>(0);
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const currentSlide = onboardingData[currentIndex];
-
   return (
     <View style={styles.container}>
       {/* Carousel Section */}
-      <View style={styles.carouselContainer}>
+      {/* <View style={styles.carouselContainer}> */}
         <Carousel
           width={width}
           height={360}
@@ -56,7 +48,7 @@ function CarouselSlider() {
           mode="parallax"
           modeConfig={{
             parallaxScrollingScale: 0.9,
-            parallaxScrollingOffset: 120,
+            parallaxScrollingOffset: 135,
           }}
           onProgressChange={p => (progress.value = p)}
           onSnapToItem={index => setCurrentIndex(index)}
@@ -66,44 +58,32 @@ function CarouselSlider() {
             </View>
           )}
         />
-      </View>
-
+      {/* </View> */}
       {/* Dynamic Content */}
-      <View style={styles.contentSection}>
+      <View >
         <OnBoarding
           title={currentSlide.title}
           subtitle={currentSlide.description}
           onPress={() => console.log('Pressed')}
-          activeIndex={currentIndex}
-        />
+          activeIndex={currentIndex} />
       </View>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  carouselContainer: {
-    height: 400,
-  },
-  slideContainer: {
-    width,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 30,
-  },
+    gap: 20,
+ 
+  slideContainer: {
+    // marginTop: 30,
   image: {
     width: width * 0.8,
     height: 360,
     resizeMode: 'contain',
     borderRadius: 16,
-  },
-  contentSection: {
-    flex: 1,
-    paddingTop: 0,
-  },
+  
 });
-
 export default CarouselSlider;
